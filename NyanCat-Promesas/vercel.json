@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "NyanCat-Promesas/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/NyanCat-Promesas/$1"
+    }
+  ]
+}
