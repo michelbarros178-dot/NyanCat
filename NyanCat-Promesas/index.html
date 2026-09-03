@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyan Cat: Explorador de APIs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <header class="game-header">
+            <h1 class="game-title">🌈 Nyan Cat: Explorador de APIs</h1>
+            <div class="stats-bar">
+                <div class="stat-item">Módulo: <span id="current-module">1</span>/10</div>
+                <div class="stat-item">Vidas: <span id="lives">❤️❤️❤️</span></div>
+                <div class="stat-item">XP: <span id="xp">0</span></div>
+                <button id="music-btn" class="music-toggle">🎵 Música: OFF</button>
+            </div>
+        </header>
+
+        <main class="canvas-container">
+            <canvas id="gameCanvas" width="900" height="400"></canvas>
+
+            <!-- Pantalla de Inicio -->
+            <div id="start-screen" class="overlay-screen">
+                <h2>¡Bienvenido a la aventura API con Nyan Cat!</h2>
+                <p>Salta, esquiva obstáculos, atrapa estrellas y responde correctamente los 10 módulos del taller.</p>
+                <button id="start-btn" class="action-btn">¡Iniciar Juego!</button>
+            </div>
+
+            <!-- Modal de Preguntas del Taller -->
+            <div id="quiz-modal" class="quiz-modal hidden">
+                <div class="quiz-content">
+                    <h3 id="quiz-module-title">Módulo — Título</h3>
+                    <p id="quiz-question">¿Pregunta de la API?</p>
+                    <div id="quiz-options" class="options-container"></div>
+                </div>
+            </div>
+
+            <!-- Notificación Flotante Estilo Arcade -->
+            <div id="game-alert-modal" class="quiz-modal hidden" style="z-index: 100;">
+                <div class="quiz-content" style="text-align: center; border: 3px solid #ff0055; box-shadow: 0 0 25px rgba(255,0,85,0.7);">
+                    <h3 id="game-alert-title" style="color: #ff3366; font-size: 22px; margin-bottom: 15px;">¡Aviso!</h3>
+                    <p id="game-alert-message" style="color: #fff; font-size: 16px; margin-bottom: 25px; line-height: 1.5;"></p>
+                    <button id="game-alert-btn" class="option-btn" style="background: linear-gradient(135deg, #ff0055, #ff7700); color: #fff; font-weight: bold; padding: 12px 25px; border-radius: 8px; cursor: pointer;">¡Entendido!</button>
+                </div>
+            </div>
+
+            <!-- Pantalla de Victoria -->
+            <div id="victory-screen" class="overlay-screen hidden">
+                <h2>🎉 ¡Felicidades, Completaste el Taller! 🎉</h2>
+                <p>Has dominado el universo de las Promesas, Fetch, Asincronía y APIs con Nyan Cat.</p>
+                <button id="restart-btn" class="action-btn">Jugar de Nuevo</button>
+            </div>
+        </main>
+
+        <footer class="game-footer">
+            <span>Usa las flechas ⬅️ ➡️ o W/S para moverte. ¡Evita caer al vacío y responde con sabiduría!</span>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
